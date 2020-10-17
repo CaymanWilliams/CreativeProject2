@@ -46,7 +46,9 @@ document.getElementById("start").addEventListener("click", function(event) {
                 }
             })
             .then(function() {
+                checkDealerHand();
                 updateDealer();
+                checkPlayerHand();
                 updatePlayer();
                 document.getElementById("stand").classList.replace("hidden", "show");
                 document.getElementById("hit").classList.replace("hidden", "show");
@@ -70,6 +72,7 @@ document.getElementById("stand").addEventListener("click", function(event) {
 document.getElementById("playagain").addEventListener("click", function(event) {
     event.preventDefault();
     document.getElementById("playagain").classList.replace("show", "hidden")
+    document.getElementById("buttonbox").classList.replace("adjust", "none")
     document.getElementById("start").click();
 })
 
@@ -119,6 +122,7 @@ function updatePlayer() {
         document.getElementById("playerCards").innerHTML += "<div class=\"result\"><h1>BUST</h1></div>"
         document.getElementById("playerCards").classList.replace("hidden", "show");
         document.getElementById("playagain").classList.replace("hidden", "show");
+        document.getElementById("buttonbox").classList.add("adjust")
     }
 }
 
@@ -144,10 +148,10 @@ function stand() {
         dealerPlays();
     }
     document.getElementById("playagain").classList.replace("hidden", "show");
+    document.getElementById("buttonbox").classList.add("adjust")
 }
 
 function dealerPlays() {
-    console.log(dealertotal)
     var url = "https://deckofcardsapi.com/api/deck/"+ deckid +"/draw/?count=1";
     fetch(url)
     .then(function(response) {

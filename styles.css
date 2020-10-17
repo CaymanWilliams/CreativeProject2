@@ -59,6 +59,11 @@ body {
     flex-wrap: wrap;
 }
 
+.adjust {
+    width: 60%;
+    justify-content: space-between;
+}
+
 .gameButton {
     border-radius: 8px;
     background-color: white;
@@ -98,6 +103,8 @@ body {
 
 .row {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .fixsize {
