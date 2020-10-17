@@ -79,17 +79,20 @@ document.getElementById("playagain").addEventListener("click", function(event) {
 function updateDealer() {
     var string = ""
     if (bust) {
+        var string = "<h1>Total: "
+        string += Math.max.apply(Math, dealertotal) + "</h1>";
         for (let i=0; i < dealercards.length; i++) {
             string += "<img src=\"" + dealercards[i][2] + "\">\n"
         }
         document.getElementById("dealerCards").classList.add("dealerboxdisplay")
     }
     else if (dealerbust) {
+        var string = "<h1>Total: "
+        string += Math.max.apply(Math, dealertotal) + "</h1>";
         for (let i=0; i < dealercards.length; i++) {
             string += "<img src=\"" + dealercards[i][2] + "\">\n"
         }
         document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-        string += "<div class=\"result\"><h2>BUST</H2></div>"
     }
     else if (dealercards.length == 2 && !finished) {
         string += "<div class=\"back\"><img src=\"/images/back.jpg\"></div>\n"
@@ -98,6 +101,8 @@ function updateDealer() {
         }
     }
     else {
+        var string = "<h1>Total: "
+        string += Math.max.apply(Math, dealertotal) + "</h1>";
         for (let i=0; i < dealercards.length; i++) {
             string += "<div><img src=\"" + dealercards[i][2] + "\"></div>\n"
         }
@@ -185,23 +190,23 @@ function finish() {
         finished = true;
         if (Math.max.apply(Math, dealertotal) > Math.max.apply(Math, playertotal)) {
             document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>WIN</h2></div>"
+            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h1>WIN</h1></div>"
             document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>LOSE<h1></div>"
         }
         else if (Math.max.apply(Math, playertotal) > Math.max.apply(Math, dealertotal)) {
             document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>LOSE</h2></div>"
+            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h1>LOSE</h1></div>"
             document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>WIN<h1></div>"
         }
         else {
             document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>TIE</h></div>"
+            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h1>TIE</h1></div>"
             document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>TIE<h1></div>"
         }
     }
     if (dealerbust) {
         document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-        document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>BUST</h></div>"
+        document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h1>BUST</h1></div>"
         document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>WIN<h1></div>"
     }
 }

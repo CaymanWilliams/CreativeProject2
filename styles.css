@@ -100,6 +100,12 @@ body {
     justify-content: center;
 }
 
+.dealerbox h1{
+    color: black;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .dealerboxdisplay {
     padding: 20px;
 }
@@ -224,5 +230,18 @@ footer {
 @media (max-width:850px) {
     .adjust {
         justify-content: center;
+    }
+    body {
+        font-size: .7em;
+    }
+
+}
+
+@media (max-width:480px) {
+    #playagain h1 {
+        width:100%;
+    }
+    #playagain img {
+        margin:0;
     }
 }
