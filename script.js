@@ -91,7 +91,7 @@ function updateDealer() {
         document.getElementById("dealerCards").classList.add("dealerboxdisplay")
         string += "<div class=\"result\"><h2>BUST</H2></div>"
     }
-    else if (dealercards.length == 2) {
+    else if (dealercards.length == 2 && !finished) {
         string += "<div class=\"back\"><img src=\"/images/back.jpg\"></div>\n"
         for (let i=1; i < dealercards.length; i++) {
             string += "<div class=\"visible\"><img src=\"" + dealercards[i][2] + "\"></div>\n"
@@ -144,8 +144,13 @@ function hit() {
 }
 
 function stand() {
-    if (!finished){
+    if (!finished && Math.max.apply(Math, dealertotal) < 17){
         dealerPlays();
+    }
+    else {
+        finished = true;
+        updateDealer();
+        finish();
     }
     document.getElementById("playagain").classList.replace("hidden", "show");
     document.getElementById("buttonbox").classList.add("adjust")
@@ -168,33 +173,37 @@ function dealerPlays() {
             dealerPlays()
         }
         else {
-            checkDealerHand();
-            updateDealer();
-            if (!dealerbust && !bust && Math.max.apply(Math, dealertotal) >= 17) {
-                finished = true;
-                if (Math.max.apply(Math, dealertotal) > Math.max.apply(Math, playertotal)) {
-                    document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-                    document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>WIN</h2></div>"
-                    document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>LOSE<h1></div>"
-                }
-                else if (Math.max.apply(Math, playertotal) > Math.max.apply(Math, dealertotal)) {
-                    document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-                    document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>LOSE</h2></div>"
-                    document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>WIN<h1></div>"
-                }
-                else {
-                    document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-                    document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>TIE</h></div>"
-                    document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>TIE<h1></div>"
-                }
-            }
-            if (dealerbust) {
-                document.getElementById("dealerCards").classList.add("dealerboxdisplay")
-                document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>BUST</h></div>"
-                document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>WIN<h1></div>"
-            }
+            finish();
         }
     })
+}
+
+function finish() {
+    checkDealerHand();
+    updateDealer();
+    if (!dealerbust && !bust && Math.max.apply(Math, dealertotal) >= 17) {
+        finished = true;
+        if (Math.max.apply(Math, dealertotal) > Math.max.apply(Math, playertotal)) {
+            document.getElementById("dealerCards").classList.add("dealerboxdisplay")
+            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>WIN</h2></div>"
+            document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>LOSE<h1></div>"
+        }
+        else if (Math.max.apply(Math, playertotal) > Math.max.apply(Math, dealertotal)) {
+            document.getElementById("dealerCards").classList.add("dealerboxdisplay")
+            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>LOSE</h2></div>"
+            document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>WIN<h1></div>"
+        }
+        else {
+            document.getElementById("dealerCards").classList.add("dealerboxdisplay")
+            document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>TIE</h></div>"
+            document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>TIE<h1></div>"
+        }
+    }
+    if (dealerbust) {
+        document.getElementById("dealerCards").classList.add("dealerboxdisplay")
+        document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>BUST</h></div>"
+        document.getElementById("playerCards").innerHTML+= "<div class=\"result\"><h1>WIN<h1></div>"
+    }
 }
 
 function checkPlayerHand() {
