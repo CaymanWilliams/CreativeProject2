@@ -192,8 +192,37 @@ footer {
 
 
 
-@media (max-width:1000px) {
-    .currentbox h5, .currentbox h1, .currentbox p{
-        text-align: center;
+@media (min-width: 1200px) and (max-width:1400px) {
+    .adjust {
+        width: 70%;
+        justify-content: space-between;
+    }
+}
+
+
+@media (min-width: 1050px) and (max-width:1200px) {
+    .adjust {
+        width: 80%;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 950px) and (max-width:1050px) {
+    .adjust {
+        width: 90%;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 850px) and (max-width:950px) {
+    .adjust {
+        width: 1000%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width:850px) {
+    .adjust {
+        justify-content: center;
     }
 }
