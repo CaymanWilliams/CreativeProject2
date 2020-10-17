@@ -85,6 +85,7 @@ function updateDealer() {
             string += "<img src=\"" + dealercards[i][2] + "\">\n"
         }
         document.getElementById("dealerCards").classList.add("dealerboxdisplay")
+        string += "<div class=\"result\"><h1>WIN</h1></div>"
     }
     else if (dealerbust) {
         var string = "<h1>Total: "
