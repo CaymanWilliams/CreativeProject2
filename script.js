@@ -6,6 +6,7 @@ var playertotal = [0];
 var started = false;
 var bust = false;
 var dealerbust = false;
+var finished = false;
 
 document.getElementById("start").addEventListener("click", function(event) {
     event.preventDefault();
@@ -17,6 +18,7 @@ document.getElementById("start").addEventListener("click", function(event) {
     bust = false;
     dealerbust = false;
     bust = false;
+    finished = false;
 
     if (!started) {
         var url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
@@ -121,7 +123,7 @@ function updatePlayer() {
 }
 
 function hit() {
-    if (!bust){
+    if (!finished){
         var url = "https://deckofcardsapi.com/api/deck/"+ deckid +"/draw/?count=1";
         fetch(url)
         .then(function(response) {
@@ -138,7 +140,7 @@ function hit() {
 }
 
 function stand() {
-    if (!bust){
+    if (!finished){
         dealerPlays();
     }
     document.getElementById("playagain").classList.replace("hidden", "show");
@@ -165,10 +167,7 @@ function dealerPlays() {
             checkDealerHand();
             updateDealer();
             if (!dealerbust && !bust && Math.max.apply(Math, dealertotal) >= 17) {
-                console.log("dealer")
-                console.log(Math.max.apply(Math, dealertotal) )
-                console.log("player")
-                console.log(Math.max.apply(Math, playertotal) )
+                finished = true;
                 if (Math.max.apply(Math, dealertotal) > Math.max.apply(Math, playertotal)) {
                     document.getElementById("dealerCards").classList.add("dealerboxdisplay")
                     document.getElementById("dealerCards").innerHTML+= "<div class=\"result\"><h2>WIN</h2></div>"
@@ -197,6 +196,7 @@ function dealerPlays() {
 function checkPlayerHand() {
     if (playertotal.filter(num => num < 22 ).length == 0) {
         bust = true;
+        finished = true;
         return
     }
     else {
@@ -205,10 +205,9 @@ function checkPlayerHand() {
 }
 
 function checkDealerHand() {
-    console.log("checking dealer")
-    console.log(dealertotal)
     if (dealertotal.filter(num => num < 22 ).length == 0) {
         dealerbust = true;
+        finished = true;
         return
     }
     else {
