@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    height: 100px;
+    width : 100%;
+    background: url(images/Header.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3em;
+    color: rgb(246,250,251);
+}
+
+.emtpy {
+    height:25px;
+    width:25px;
+}
+
+.gap {
+    height: 25px;
+    background-color: rgb(23, 59, 18);
+}
+
+body {
+    background: linear-gradient(rgb(78, 138, 105), white );
+    min-height: 1000px;
+}
+
+.excludefooter {
+    min-height: 1000px;
+}
+
+.main {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gamebox {
+    border-radius: 8px;
+    background-color: white;
+    width: 65%;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 7px 7px 8px #888888;
+}
+
+.gamebox h1 {
+    margin-bottom: 10px;
+}
+
+.buttonbox {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.gameButton {
+    border-radius: 8px;
+    width: 210px;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 7px 7px 8px #313131;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameButton img {
+    height: 40px;
+    margin-left: 20px
+}
+
+.dealerbox {
+    border-radius: 8px;
+    background-color: white;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 7px 7px 8px #888888;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dealerbox img {
+    width: 45%;
+    height: auto;
+}
+
+.dealerbox h2 {
+    width:100%;
+    color: black;
+    margin-bottom:25px;
+}
+
+.back {
+    position:relative;
+    z-index:1;
+    left:90px;
+}
+
+.visible {
+    position:relative;
+    left: -90px;
+    z-index:2;
+}
+
+.playerbox {
+    border-radius: 8px;
+    background: linear-gradient(rgb(4,111,148), rgb(51,146,173) );
+    width: 45%;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 7px 7px 8px #888888;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer {
+    background-color: rgb(23, 59, 18);
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width:1000px) {
+    .currentbox h5, .currentbox h1, .currentbox p{
+        text-align: center;
+    }
+}
