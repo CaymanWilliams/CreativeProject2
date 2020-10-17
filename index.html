@@ -21,29 +21,27 @@
 <body>
   <div class = "excludefooter">
     <div class = "main">
-      <div class="gamebox">
-        <h1>Game Overview</h1>
-
-        <form id="startForm" class="startGame">
-          <div class="consolidateForm">
-            <input type="button" value="Start Game" id="start">
-          </div>
-        </form>
+      <div class="gamebox" id="start">
+        <h1>Start Game</h1>
       </div>
+      
+        <div id="dealerCards" class="dealerbox hidden">
+        </div>
 
-      <div id="dealerCards" class="dealerbox hidden">
-      </div>
-
-      <div class="buttonbox">
-        <div id ="stand" class="gameButton hidden">
+      <div id="buttonbox" class="buttonbox">
+        <div id ="stand" class="gameButton fixsize hidden">
           <h1>STAND</h1>
           <img src= "images/hand.png">
         </div>
-        <div id ="hit" class="gameButton hidden">
+        <div id="playagain" class="gameButton hidden">
+          <h1>PLAY AGAIN</h1>
+          <img src="images/redo.png">
+        </div>
+        <div id ="hit" class="gameButton fixsize hidden">
           <h1>HIT</h1>
           <img src="images/card1.png">
         </div>
-    </div>
+      </div>
 
       <div id="playerCards" class="playerbox hidden">
       </div>
@@ -60,7 +58,7 @@
 <footer>
   <div class="footer">
     <div class="github-footer">
-      <p>GitHub Repository: <a style="color:white" href="https://github.com/BYU-CS-260-Winter-2020/lab-1-photography-website-CaymanWilliams">https://github.com/BYU-CS-260-Winter-2020/lab-1-photography-website-CaymanWilliams</a></p>
+      <p>GitHub Repository: <a style="color:white" href="https://github.com/CaymanWilliams/CreativeProject2">https://github.com/CaymanWilliams/CreativeProject2</a></p>
     </div>
   </div>
 </footer>

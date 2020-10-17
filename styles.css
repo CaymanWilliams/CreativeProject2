@@ -31,11 +31,7 @@
 
 body {
     background: linear-gradient(rgb(78, 138, 105), white );
-    min-height: 1000px;
-}
-
-.excludefooter {
-    min-height: 1000px;
+    min-height: 100vh;
 }
 
 .main {
@@ -48,26 +44,22 @@ body {
 .gamebox {
     border-radius: 8px;
     background-color: white;
-    width: 65%;
+    width: 45%;
     height: auto;
     padding: 20px;
     margin: 20px;
     box-shadow: 7px 7px 8px #888888;
-}
-
-.gamebox h1 {
-    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .buttonbox {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .gameButton {
     border-radius: 8px;
-    width: 210px;
     background-color: white;
     padding: 20px;
     margin: 20px;
@@ -90,6 +82,8 @@ body {
     width: auto;
     height: auto;
     padding: 20px;
+    padding-left:0px;
+    padding-right:0px;
     margin: 20px;
     box-shadow: 7px 7px 8px #888888;
     display: flex;
@@ -97,13 +91,25 @@ body {
     justify-content: center;
 }
 
+.dealerboxdisplay {
+    padding: 20px;
+}
+
+.row {
+    width: 100%;
+}
+
+.fixsize {
+    width: 207px;
+}
+
 .dealerbox img {
-    width: 45%;
-    height: auto;
+    height: 157px;
+    width: auto;
 }
 
 .dealerbox h2 {
-    width:100%;
+    width:70%;
     color: black;
     margin-bottom:25px;
 }
@@ -111,20 +117,18 @@ body {
 .back {
     position:relative;
     z-index:1;
-    left:90px;
+    left: 30px;
 }
 
 .visible {
     position:relative;
-    left: -90px;
     z-index:2;
+    left: -30px;
 }
 
 .playerbox {
     border-radius: 8px;
-    background: linear-gradient(rgb(4,111,148), rgb(51,146,173) );
-    width: 45%;
-    height: auto;
+    background: linear-gradient(rgb(23, 59, 18),rgb(78, 138, 105));
     padding: 20px;
     margin: 20px;
     box-shadow: 7px 7px 8px #888888;
@@ -133,16 +137,51 @@ body {
     justify-content: center;
 }
 
+.playerbox img {
+    height: auto;
+    width: 113px;
+}
+
+.playerbox h1{
+    color: white;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 footer {
     background-color: rgb(23, 59, 18);
     color: white;
     padding: 25px;
     text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .hidden {
     display: none;
 }
+
+.result {
+    position: absolute;
+}
+
+.result h1{
+    font-size: 6em;
+    color: black;
+    background-color: rgba(197, 197, 197, 0.575);
+    width: 100%;
+}
+
+.result h2{
+    font-size: 6em;
+    color: black;
+    background-color: rgba(197, 197, 197, 0.575);
+    width: 100%;
+}
+
+
 
 @media (max-width:1000px) {
     .currentbox h5, .currentbox h1, .currentbox p{
