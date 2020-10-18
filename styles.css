@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+header {
+  background-color: black;
+}
+
 .header {
     height: 100px;
     width : 100%;
@@ -12,6 +16,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 }
 
 .header h1 {
@@ -26,7 +31,7 @@
 
 .gap {
     height: 25px;
-    background-color: rgb(23, 59, 18);
+    background-color: #000000;
 }
 
 body {
@@ -165,14 +170,6 @@ body {
     margin-bottom: 20px;
 }
 
-footer {
-    background-color: rgb(23, 59, 18);
-    color: white;
-    padding: 25px;
-    text-align: center;
-    width: 100%;
-}
-
 .hidden {
     display: none;
 }
@@ -196,7 +193,38 @@ footer {
     z-index:3;
 }
 
+footer {
+  background-color: #000000;
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  color: #b08a4f;
+  border-top: 5px solid #b08a4f;
+  margin-top: 50px;
+}
 
+h5 {
+  font-size: 24pt;
+  margin: 0px;
+}
+
+#menu {
+  list-style-type: none;
+}
+
+li a {
+  display: block;
+  color: #b08a4f;
+  text-align: center;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 12pt;
+  margin-right: 30px;
+}
+
+li a:hover {
+  color: #000000;
+  background-color: #b08a4f;
+}
 
 @media (min-width: 1200px) and (max-width:1400px) {
     .adjust {
@@ -234,6 +262,9 @@ footer {
     body {
         font-size: .7em;
     }
+    li a {
+      font-size: 8pt;
+    }
 
 }
 
@@ -243,5 +274,8 @@ footer {
     }
     #playagain img {
         margin:0;
+    }
+    li a {
+      font-size: 8pt;
     }
 }

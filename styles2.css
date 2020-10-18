@@ -1,0 +1,115 @@
+body {
+  background-color: #000000;
+}
+
+.title {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.title2 {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 85%;
+}
+
+.welcome {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  text-align: center;
+  color: black;
+  background: linear-gradient(rgb(78, 138, 105), white );
+  border: 5px solid #b08a4f;
+  margin: 50px;
+  padding:10px;
+}
+
+.button {
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 30%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  font-size: 24pt;
+  border: 5px solid #b08a4f;
+}
+
+footer {
+  background-color: #000000;
+  border-top: 5px solid #b08a4f;
+  text-align: center;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  margin-top: 50px;
+  color: #b08a4f;
+}
+
+h5 {
+  font-size: 24pt;
+  margin: 0px;
+}
+
+#menu {
+  list-style-type: none;
+}
+
+a {
+  display: block;
+}
+
+p a {
+  display: block;
+  color: #b08a4f;
+  text-align: center;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+p a:hover {
+  color: #000000;
+  background-color: #b08a4f;
+}
+
+li a {
+  display: block;
+  color: #b08a4f;
+  text-align: center;
+  padding: 8px 10px;
+  text-decoration: none;
+  font-size: 12pt;
+  margin-right: 30px;
+}
+
+li a:hover {
+  color: #000000;
+  background-color: #b08a4f;
+}
+
+@media only screen and (max-width: 990px) {
+  li a {
+    font-size: 8pt;
+  }
+  footer {
+    font-size: 8pt;
+  }
+  .button {
+    font-size: 12pt;
+  }
+
+}
+
+@media only screen and (min-width: 991px) {
+  .welcome {
+    font-size: 24pt;
+  }
+  h1 {
+    font-size: 40pt;
+  }
+
+}
